@@ -4,9 +4,9 @@ import { Flex} from "@chakra-ui/react"
 
 const Flex_cont=({onData,data,mx})=>{
     let dataarr=[...data];
-    console.log(dataarr);
+    //console.log(dataarr);
     const [flex_data,set_flex_data]=useState(dataarr);
-    console.log({flex_data});
+    //console.log({flex_data});
     const handleCardData = (fdata) => {
         // Update data received from child component
         let updated_data=flex_data.filter((element)=>{
@@ -20,7 +20,7 @@ const Flex_cont=({onData,data,mx})=>{
    return (<Flex justify="space-between" wrap="wrap" mx={mx}>
     {flex_data.map((card)=>{
         
-        return(<Hero_card onflexData={handleCardData} key={card.id} id={card.id} Imagesrc={card.src} Hp={card.Hp} Description={card.Description} Heroname={card.Heroname}></Hero_card>)
+        return(<Hero_card onflexData={handleCardData} key={card.id} id={card.id} src={card.src} Hp={card.Hp} Description={card.Description} Heroname={card.Heroname}></Hero_card>)
     })}
     </Flex>)
 }
